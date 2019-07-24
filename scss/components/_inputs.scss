@@ -1,0 +1,35 @@
+input.input-no-border{
+    border: 0;
+    padding: 0 0 .2em;
+
+    background-color: rgba(0, 0, 0, 0);
+    background-position: center bottom, center calc(99%);
+    background-repeat: no-repeat;
+    background-size: 0 0px, 100% 0px;
+    transition: background 0s ease-out 0s;
+    background-image: linear-gradient($blue, $blue), linear-gradient(#eef1f2, #eef1f2);
+
+    &:focus {
+        background-size: 100% 2px, 100% 3px;
+        outline: 0 none;
+        transition-duration: 0.3s;
+    }
+}
+
+.input-group-custom{
+    border: 1px solid #c2cfd6;
+    padding-right: 1px;
+    &:focus-within{
+        box-shadow: 0 0 0 0.2rem rgba(32, 168, 216, 0.25);
+    }
+    input{
+      border: none;
+
+      &:focus{
+        box-shadow: none;
+      }
+    }
+    div.input-group-text{
+      border: none;
+    } 
+}

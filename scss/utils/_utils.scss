@@ -1,0 +1,31 @@
+.centralize {
+  justify-content: center;
+  align-items: center;
+}
+.text-overflow {
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+
+//----------Size utils-------------
+.ms-50{
+  max-width: 50px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.ms-100{
+  max-width: 100px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.ms-150{
+  max-width: 150px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.ms-200{
+  max-width: 200px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}

@@ -1,0 +1,26 @@
+.dropdown {
+  margin: 0px !important;
+}
+
+.dropdown-button {
+  cursor: pointer;
+}
+.dropdown-menu{
+  box-shadow: 1px 1px 3px 0px rgba(0,0,0,0.35);
+  margin-top: 12px;
+}
+.arrow-top-right:before {
+  right: 3em;
+  margin-right: 0;
+}
+.arrow-top-right:before {
+  width: 0;
+  height: 0;
+  content: "";
+  border-left: 12px solid transparent;
+  border-right: 12px solid transparent;
+  border-bottom: 12px solid #fff;
+  top: -12px;
+  margin-right: -12px;
+  position: absolute;
+}

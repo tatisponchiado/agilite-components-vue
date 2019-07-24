@@ -1,0 +1,62 @@
+
+.crud-list-tools {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap; 
+    
+  .btn-config {
+    margin-left: 1px;
+  }
+}
+
+.crud-list-table {
+  overflow: auto;
+  .table-hover tbody tr:hover {
+    color: #151b1e;
+    background-color: rgba(0, 0, 0, 0.3);
+    cursor: pointer;
+  }
+}
+
+.crud-list-footer {
+  padding: 10px 0px;
+  border-top: solid 1px #ccc;
+  display: flex;
+  justify-content: space-between;
+}
+
+.paginator {
+  font-size: 0.9em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  select{
+    border: 0px;
+    outline: 0px;
+  }
+  i{
+    font-size: 1.2rem;
+  }
+}
+
+.curd-list-acoes {
+  font-size: 1.1rem;
+
+  span {
+    cursor: pointer;
+  }
+}
+.crud-edit-tools {
+  border-bottom: solid 1px #ccc;
+}
+
+
+
+@media (max-width: 768px) {
+  .crud-list-tools {
+    .div-busca {
+      max-width: 100%;
+      flex-grow: 1
+    }
+  }
+}

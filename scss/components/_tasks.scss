@@ -1,0 +1,16 @@
+.task {
+  //max-width: calc(100vw - 30px);
+}
+
+.task-header {
+  color: #FFF;
+  display: flex;
+  margin-top: 20px;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+
+  h5 {
+    margin-bottom: 0px;
+  }
+}

@@ -1,0 +1,265 @@
+.ms {
+  position: fixed;
+  height: 100%;
+  width: $sidebar-width;
+  min-width: $sidebar-width;
+  background-color: #1c1d22;
+  min-height: 100vh;
+  margin-left: -$sidebar-width;
+  color: #bdbdbd;
+  overflow-x: hidden;
+  overflow-y: scroll;
+  z-index: 9999;
+
+  transition: margin-left 0.5s;
+
+  
+
+  &::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+    border-radius: 10px;
+    background-color: #1c1d22;
+  }
+
+  &::-webkit-scrollbar
+  {
+    width: 6px;
+    background-color: #1c1d22;
+  }
+  &::-webkit-scrollbar:hover{
+    width: 12px;
+  }
+
+  &::-webkit-scrollbar-thumb
+  {
+    border-radius: 10px;
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);
+    background-color: lighten($color: #1c1d22, $amount: 10%)
+  }
+
+
+  .ms-divider{
+    margin: 0px 5px;
+    border-top: solid 1px #4d4d4d;
+  }
+
+  .ms-header{
+    height: 50px;
+    padding: 5px;
+    align-items: center;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+    .ms-logo {
+      flex-grow: 1;
+
+      img{
+        max-height: 30px;
+        height: auto;
+        width: auto;
+      }
+    }
+    i{
+      font-size: 2.0em;
+      color: red;
+    }
+  }
+
+  .ms-empresa{
+    height: 50px;
+    margin: 0px 0px;
+    padding: 0px 5px;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+  }
+  .ms-empresa i {
+    font-size: 2.0em;
+    color: red;
+  }
+  .ms-empresa-logo {
+    width: 80px;
+    height: 40px;
+    background-color: #FFF;
+    border-radius: 5px;
+    padding: 5px;
+  }
+  .ms-empresa-logo img {
+    max-width: 100%;
+    max-height: 100%;
+    height: auto;   
+    width: auto; 
+  }
+  .ms-empresa-name {
+    width: $sidebar-width - 80px;
+    margin: 0px 10px;
+    align-items: center;
+    cursor: pointer;
+  }
+  .empresa-name {
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    
+    font-weight: bold;
+  }
+  .ms-troca-empresa i{
+    margin: 0px 5px;
+    font-size: 2.2em;
+    color: #bdbdbd;
+  }
+  .ms-menu {
+    font-family: 'Avenir Next', Avenir, 'Helvetica Neue', 'Lato', 'Segoe UI', Helvetica, Arial, sans-serif;
+    letter-spacing: 1px;
+    font-size: 0.95em;
+    padding-left: 5px;
+
+    .ms-historico {
+      font-weight: bold;
+      text-transform: uppercase;
+      margin: 20px 0px;
+      font-size: 0.75em;
+      color: #5c5edc;
+      padding-left: 5px;
+
+      i {
+        color: #bdbdbd;
+      }
+      span {
+        padding-right: 2px;
+      }
+    }
+    .ms-historico-clickable span.text {
+      cursor: pointer;
+      text-decoration: underline;
+    }
+
+    .menu-item {
+      padding: 15px 10px 15px 5px;
+      cursor: pointer;
+      font-weight: bold;
+      font-size: 1.1em;
+
+      .menu-item-text {
+        flex-grow: 1;
+        i {
+          font-size: 1.5em;
+        }
+      }
+      
+      &:hover {
+        transition: color 0.8s, background-color 0.8s;
+        color: #5c5edc;
+        background-color: lighten(#1c1d22, 3%)
+      }
+      
+    }
+    .menu-sair {
+      color: red;
+    }
+  }
+}
+
+.separator {
+  color: #bdbdbd;
+}
+
+.sidebar-visible .ms{
+  margin-left: 0;
+}
+
+@media (min-width: 769px) {
+  .sidebar-visible .container-body {
+    margin-left: $sidebar-width;
+    transition: margin-left 0.5s;
+  }
+  .container-body {
+    transition: margin-left 0.5s;
+  }
+}
+
+
+@media (max-width: 768px) {
+  .ms {
+    width: 100vw;
+    margin-left: -100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+
+    .ms-empresa-name {
+      width: calc(100% - 80px);
+    }
+  }
+}
+
+
+//-------Header--------
+.panel-header{
+  border-color:#FFFF;
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+  width: 100%;
+  height: 50px;
+  justify-content: center;
+  transition: visibility 0.5s;
+
+  i{
+    font-size: 1.8rem;
+    color: rgba(255,255,255,0.6)
+  }
+  img{
+    margin-left: 15px;
+    max-height: 38px;
+    height: auto;
+    width: auto;
+  }
+}
+
+@media (max-width: 768px) {
+  .panel-header{
+    z-index: 9995;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-image: url('~@/assets/mobile-header.jpg');
+    background-position: center top;
+    background-size: 100% 50px;
+    img{
+      max-height: 20px;
+    }
+  }
+}
+
+.container-body{
+  background-image: url('~@/assets/header.jpg');
+  background-position: center top;
+  background-size: 100% 350px;
+  background-color: #f9f9fc;
+  background-repeat: no-repeat;
+  flex-grow: 1;
+}
+
+.container {
+  min-width: 340px;
+}
+
+.portlet {
+  background-color: #FFFFFF;
+  border-radius: 10px;
+  flex-grow: 1;
+  padding: 20px;
+  margin-bottom: 15px;
+  margin-top: 15px;
+}
+
+.task-body {
+  min-height: calc(100vh - 50px);
+}
+
+
+@media (max-width: 768px) {
+  .container {
+    padding-left: 5px;
+    padding-right: 5px;
+  }
+  .task-body{
+    margin-top: 50px;
+    // overflow-y: scroll;
+  }
+}

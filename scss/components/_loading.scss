@@ -1,0 +1,147 @@
+$colors: #8C8C8C
+         #F2F2F2
+         #7FBF3F
+         #4E733D
+         #2F4D59;
+
+$inner: 30px;
+$border: 6px;
+$spacing: 1px;
+
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+section.wrapper {
+  padding: 40px 0;
+  width: 100vw;
+  position: fixed;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  z-index: 9999;
+  
+  &.dark {
+    background: rgba($color: #313134, $alpha: 0.9);
+  }
+}
+
+div.spinner {
+  @include animation(rotate 10s infinite linear);
+  
+  position:relative;
+  top: calc(50% - 50px);
+  left: calc(50% - 50px);
+  $size: $inner + length($colors) * ($border + $spacing) * 2;
+  
+  width: $size;
+  height: $size;
+  
+  i {
+    @include animation(
+      rotate 3s infinite cubic-bezier(.09, .6, .8, .03)
+    );
+    @include transform-origin(50%, 100%, 0);
+
+    position: absolute;
+    display: inline-block;
+
+    top: 50%;
+    left: 50%;
+
+    border: solid $border transparent;
+    border-bottom: none;
+
+    @each $current in $colors {
+      $i: index($colors, $current);
+
+      &:nth-child(#{$i}) {
+        $size: $inner + $i * ($border + $spacing) * 2;
+
+        @include animation-timing-function(
+          cubic-bezier(.09, .3 * $i, .12 * $i, .03)  
+        );
+
+        width: $size;
+        height: $size / 2;
+
+        margin-top: -$size / 2;
+        margin-left: -$size / 2;
+
+        border-color: $current;
+
+        border-top-left-radius: $inner + $i * $border;
+        border-top-right-radius: $inner + $i * $border;
+      }
+    }
+  }
+}
+
+
+div.loadingDog {
+  width: 100px;
+  height: 100px;
+  position: absolute;
+  top: calc(50% - 50px);
+  left: calc(50% - 50px);
+  margin-top:-50px;
+  margin-left:-50px;
+
+  div.img {
+    border-radius: 50%;
+    width: 190px;
+    height: 190px;
+  }
+}
+
+
+.processando{
+  position:fixed;
+  top: calc(50% + 90px);
+  left: calc(50% - 50px);
+  color: white;
+}
+
+.loadingDog-img-0{
+  background-image: url('https://s3-sa-east-1.amazonaws.com/agilite.public/assets/img/loading/dog_01.gif');
+  background-position: center;
+  background-size: contain;
+}
+.loadingDog-img-1{
+  background-image: url('https://s3-sa-east-1.amazonaws.com/agilite.public/assets/img/loading/dog_02.gif');
+  background-position: center;
+  background-size: contain;
+}
+.loadingDog-img-2{
+  background-image: url('https://s3-sa-east-1.amazonaws.com/agilite.public/assets/img/loading/dog_03.gif');
+  background-position: center;
+  background-size: contain;
+}
+.loadingDog-img-3{
+  background-image: url('https://s3-sa-east-1.amazonaws.com/agilite.public/assets/img/loading/dog_04.gif');
+  background-position: center;
+  background-size: cover;
+}
+.loadingDog-img-4{
+  background-image: url('https://s3-sa-east-1.amazonaws.com/agilite.public/assets/img/loading/dog_05.gif');
+  background-position: center;
+  background-size: cover;
+}
+.loadingDog-img-5{
+  background-image: url('https://s3-sa-east-1.amazonaws.com/agilite.public/assets/img/loading/dog_06.gif');
+  background-position: center;
+	background-size: cover;
+}
+.loadingDog-img-6{
+  background-image: url('https://s3-sa-east-1.amazonaws.com/agilite.public/assets/img/loading/dog_07.gif');
+  background-position: center;
+  background-size: 200px 190px;
+}
+
+@include keyframes(rotate) {
+  to {
+    @include rotateZ(360deg);
+  }
+}

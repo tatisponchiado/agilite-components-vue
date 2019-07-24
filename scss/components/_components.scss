@@ -1,0 +1,42 @@
+.float-button{
+	position:fixed;
+	width:60px;
+	height:60px;
+	bottom:40px;
+	right:40px;
+	background-color:#0C9;
+	color:#FFF;
+  border-radius: 50px;
+  border: none;
+	text-align:center;
+	box-shadow: 2px 2px 3px rgba(0,0,0,0.8);
+}
+
+//----- VeeValidate error class
+.form-text {
+  font-weight: lighter;
+  font-size: 0.8rem;
+  color: #F00;
+}
+
+
+//---- v-Select
+.vs__dropdown-toggle {
+  border-radius: 0px !important;
+  height: 35px;
+  border: 1px solid #c2cfd6 !important;
+
+  &:focus-within{
+    color: #3e515b;
+    background-color: #fff;
+    border-color: #8ad4ee;
+    outline: 0;
+    -webkit-box-shadow: 0 0 0 0.2rem rgba(32, 168, 216, 0.25);
+    box-shadow: 0 0 0 0.2rem rgba(32, 168, 216, 0.25);
+  }
+}
+
+.inp-invalid {
+  background: #f89c9b;
+}
+
